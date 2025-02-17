@@ -12,20 +12,20 @@ let peakReached = false;
 // Global variables for the text fade animation
 let texts = [
   "Woah, kid... let's pause for a moment shall we?\nLet's slow down and be good to ourselves...",
-  "Let's soften our focus, Hold both palms to our chest, and breath...",
+  "Let's soften our focus, hold both palms to our chest, and breath...",
   "• • •",
   "• •",
   "•",
   "Evenly and deeply and with purpose, focus on each inhale, focus on each exhale...",
   "The resistance that you're feeling...\nThat moment of weakness...",
-  "It's because you're on the edge of a breakthrough...\nJust breath...",
+  "It's because you're on the edge of a breakthrough...",
   "• • •",
   "• •",
   "•",
-  "Now, close this window and see how long you can lean into this dip.\nDance with your fear...",
+  "Now, close this window and lean into this dip.\nDance with your fear...",
   "Allign with that ideal you.\nYou know better than anyone who that is...",
-  "Become.", "🐸"
-  ];
+  "Become."]
+  
 let currentTextIndex = 0;
 let textAlpha = 0;
 let fadeDirection = 1;  // 1 = fade in, -1 = fade out
