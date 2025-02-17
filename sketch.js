@@ -4,7 +4,7 @@ let easingFactorIn = 0.060;     // Easing factor when expanding (inhaling)
 let easingFactorOut = 0.020;    // Easing factor when contracting (exhaling)
 let speedMultiplierIn = 0.40;    // Speed multiplier for inhale
 let speedMultiplierOut = 1.50;  // Speed multiplier for exhale (set higher to speed up the return)
-let targetSize = 400;       // Maximum size for expansion
+let targetSize = 400;            // Maximum size for expansion
 let direction = 1;              // 1 for inhale (expanding), -1 for exhale (contracting)
 let numLayers = 50; 
 let peakReached = false;  
@@ -60,8 +60,8 @@ function setup() {
   particles = []
     for(let i = 0; i< int(width/starAmount); i++){
       particles.push(new Particle());
-}
-}
+    }
+  }
 
 function draw() {
   background(0,0,0,1);
@@ -136,7 +136,6 @@ function drawBreathingEllipses() {
   let startSizeHueMap = map(startSize,0,targetSize,290,140)
   let startSizeAlphaMap = map(startSize, 130, 0, 0, 1);
   let startSizeAlphaMap2 = map(startSize, targetSize-5, targetSize, 0, 1);
-  console.log('aplha: ', startSizeAlphaMap);
 
   function easeInOutSine(x) {
     return -(cos(PI * x) - 1) / 2;
@@ -151,8 +150,8 @@ function drawBreathingEllipses() {
       let easedProgress = easeInOutSine(effectiveProgress);
       let ellipseSize = easedProgress * targetSize;
       let t = i / (numLayers - 1);
-      let alpha = lerp(0, 10, t);
-      strokeWeight(0);
+      let alpha = lerp(0, 5, t);
+      noStroke();
       if (!peakReached) {
         fill(startSizeHueMap, 100, startSizeBrightnessMap1, alpha);
       } else {
